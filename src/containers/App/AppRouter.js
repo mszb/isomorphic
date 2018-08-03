@@ -31,7 +31,7 @@ class AppRouter extends React.Component {
         <Route
             exact
             path={`${url}/bank-&-card-statements`}
-            component={asyncComponent(() => import('../Calendar/Calendar'))}
+            component={asyncComponent(() => import('../bankCardStatements/index.js'))}
         />
         <Route
             exact

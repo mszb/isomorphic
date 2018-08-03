@@ -6,7 +6,7 @@ import IsoWidgetBox from './widget-box';
 import { TableViews } from '../Tables/antTables';
 
 
-export default class InvoicesReceipts extends Component {
+export default class bankCardStatements extends Component {
 
 
   componentDidMount(){
@@ -31,7 +31,7 @@ export default class InvoicesReceipts extends Component {
             <IsoWidgetsWrapper>
               <IsoWidgetBox>
                 {/* TABLE */}
-                <TableViews.rbTblView />
+                <TableViews.rbTblViewDt />
               </IsoWidgetBox>
             </IsoWidgetsWrapper>
           </Col>

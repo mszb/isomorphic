@@ -11,13 +11,7 @@ const columns = [
   ];
 
 
-  
-
-
-export default class rbTblView extends Component {
-
- 
-
+export default class rbTblViewDt extends Component {
   state = {
     data: [],
     pagination: {},
@@ -69,10 +63,7 @@ export default class rbTblView extends Component {
   }
 
 
-  
-
   render() {
-      
     return (
       <TableWrapper
         columns={columns}

@@ -5,6 +5,7 @@ import FilterView from './filterView';
 import GroupView from './groupView';
 import EditView from './editView';
 import rbTblView from './rbTblView';
+import rbTblViewDt from './rbTblViewDt';
 
 export {
   SimpleView,
@@ -14,4 +15,5 @@ export {
   GroupView,
   EditView,
   rbTblView,
+  rbTblViewDt,
 };

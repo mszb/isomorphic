@@ -10,13 +10,7 @@ const columns = [
     { title: 'Email', dataIndex: 'email', sorter: true,}
   ];
 
-
-  
-
-
 export default class rbTblView extends Component {
-
- 
 
   state = {
     data: [],

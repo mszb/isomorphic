@@ -6,6 +6,7 @@ import GroupView from './groupView';
 import EditView from './editView';
 import rbTblView from './rbTblView';
 import rbTblViewDt from './rbTblViewDt';
+import allTblView from './i-r/allTblView';
 
 export {
   SimpleView,
@@ -16,4 +17,5 @@ export {
   EditView,
   rbTblView,
   rbTblViewDt,
+  allTblView,
 };

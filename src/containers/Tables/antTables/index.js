@@ -4,7 +4,7 @@ import LayoutContentWrapper from '../../../components/utility/layoutWrapper';
 import TableDemoStyle from './demo.style';
 import fakeData from '../fakeData';
 import { tableinfos } from './configs';
-import * as TableViews from './tableViews/';
+import * as TableViews from './tableViews';
 
 const dataList = new fakeData(10);
 

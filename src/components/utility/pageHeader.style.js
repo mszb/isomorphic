@@ -8,7 +8,7 @@ const WDComponentTitleWrapper = styled.h1`
   color: ${palette('secondary', 2)};
   width: 100%;
   margin: 0 17px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -31,7 +31,7 @@ const WDComponentTitleWrapper = styled.h1`
     content: '';
     width: 100%;
     height: 1px;
-    background-color: ${palette('secondary', 3)};
+    // background-color: ${palette('secondary', 3)};
     display: flex;
     margin: ${props => (props['data-rtl'] === 'rtl' ? '0 15px 0 0' : '0 0 0 15px')};
   }

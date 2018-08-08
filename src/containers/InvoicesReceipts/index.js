@@ -16,8 +16,55 @@ function callback(key) {
 
 export default class InvoicesReceipts extends Component {
 
+  constructor(){
+    super();
+    this.state = {
+      name: 'jhon'
+    }
+    console.log('constructor');
+  } 
+
+  componentWillMount(){
+    if( window.innerWidth < 500 ){
+      this.setState({innerWidth:window.innerWidth});
+    }
+    console.log('componentWillMount');
+  }
+
   componentDidMount(){
     document.title = "Invoices Receipts"
+    console.log('componentDidMount');
+  }
+
+  componentWillReceiveProps(){
+    console.log('componentWillReceiveProps');
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+    console.log('shouldComponentUpdate');
+    return true;
+  }
+
+  componentWillUpdate(){
+    console.log('componentWillUpdate');
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    console.log('prevProps', prevProps);
+    console.log('prevProps', prevState);
+    console.log('componentDidUpdate');
+  }
+
+  componentWillUnmount(){
+    console.log('componentWillUnmount');
+  }
+
+  changeState(){
+    this.setState({name: 'jill'});
+  }
+
+  unmountChild(){
+    this.setState({name:'robert'});
   }
 
   render() {
@@ -29,12 +76,16 @@ export default class InvoicesReceipts extends Component {
       padding: '15px',
       overflow: 'hidden'
     };
-
+    console.log('render');
+    if(this.setState.name === 'robert'){
+      return(<div/>)
+    }
     return (
-
       <div style={wisgetPageStyle}>
 
         <Row style={rowStyle} gutter={0} justify="start">
+
+
           <Col md={12} sm={12} xs={24}>
             <PageHeader>Invoice and Receipts</PageHeader>
           </Col>
@@ -51,7 +102,7 @@ export default class InvoicesReceipts extends Component {
                   <TabPane tab="All" key="1" >
                     <TableViews.allTblView />
                   </TabPane>
-                  <TabPane tab="Processed" key="2" >
+                  <TabPane tab="Processed" key="2">
                     <TableViews.processTblView/>
                   </TabPane>
                   <TabPane tab="Approved" key="3">
@@ -64,7 +115,6 @@ export default class InvoicesReceipts extends Component {
                     <TableViews.oldTblView />
                   </TabPane>
                 </Tabs>
-
               </IsoWidgetBox>
             </IsoWidgetsWrapper>
           </Col>

@@ -69,31 +69,27 @@ export default class BtnallTab extends Component {
     return (
       <Col md={12} sm={12} xs={24} align="right">
 
-      <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} >
-        <Button type="primary" shape="circle" icon="edit" style={margin}></Button>
-      </Popover>
+        <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} >
+          <Button type="primary" shape="circle" icon="edit" style={margin}></Button>
+        </Popover>
 
-      <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} >
-        <Button type="danger" shape="circle" icon="delete" style={margin}/>
-      </Popover>
+        <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} >
+          <Button type="danger" shape="circle" icon="delete" style={margin}/>
+        </Popover>
 
-      <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} >
-        <Button type="primary" shape="circle" icon="link" style={margin}/>
-      </Popover>
+        <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} >
+          <Button type="primary" shape="circle" icon="link" style={margin}/>
+        </Popover>
 
-      <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} >
-        <Button type="primary" shape="circle" icon="download" style={margin}/>
-      </Popover>
+        <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} >
+          <Button type="primary" shape="circle" icon="download" style={margin}/>
+        </Popover>
 
-      <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} >
-        <Button type="primary" shape="circle" icon="plus" style={margin}/>
-      </Popover>
+        <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} >
+          <Button type="primary" shape="circle" icon="plus" style={margin}/>
+        </Popover>
 
-      <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} >
-        <Button type="primary" shape="circle" icon="filter" style={margin}/>
-      </Popover>
-
-    </Col>
+      </Col>
     );
   }
 }

@@ -7,6 +7,7 @@ import todosSagas from './todos/saga';
 import cardsSagas from './card/saga';
 import youtubeSearchSagas from './youtubeSearch/sagas';
 import devSagas from '../customApp/redux/sagas';
+import invoiceSagas from './invoices/saga';
 
 export default function* rootSaga(getState) {
   yield all([
@@ -17,6 +18,7 @@ export default function* rootSaga(getState) {
     todosSagas(),
     cardsSagas(),
     youtubeSearchSagas(),
-    devSagas()
+    devSagas(),
+     invoiceSagas()
   ]);
 }

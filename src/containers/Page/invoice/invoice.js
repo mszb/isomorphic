@@ -1,76 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import invoiceActions from '../../../redux/invoices/actions.js';
+
 import { TableViews } from '../../Tables/antTables';
 import Button from '../../../components/uielements/button';
 import InvoicePageWrapper from './invoice.style';
 
+
+const {sendInvoice} = invoiceActions;
+
 const Table = TableViews.SimpleView;
-const columns = [
-  {
-    title: '#',
-    dataIndex: 'index',
-    key: 'index',
-    width: '5%'
-  },
-  {
-    title: 'Item Name',
-    dataIndex: 'itemname',
-    key: 'itemname',
-    width: '65%',
-    className: 'itemName'
-  },
-  {
-    title: 'Costs',
-    dataIndex: 'costs',
-    key: 'costs',
-    width: '10%'
-  },
-  {
-    title: 'Qty',
-    dataIndex: 'quantity',
-    key: 'quantity',
-    width: '10%'
-  },
-  {
-    title: 'Price',
-    dataIndex: 'price',
-    key: 'price',
-    width: '10%'
-  }
-];
 
-const data = [
-  {
-    key: '1',
-    index: '1',
-    itemname: 'A box of happiness',
-    costs: 200,
-    quantity: 14,
-    price: '$2800'
-  },
-  {
-    key: '2',
-    index: '2',
-    itemname: 'Unicorn Tears',
-    costs: 500,
-    quantity: 14,
-    price: '$7000'
-  },
-  {
-    key: '3',
-    index: '3',
-    itemname: 'Rainbow Machine',
-    costs: 700,
-    quantity: 5,
-    price: '$3500'
-  }
-];
-
-export default class Invoice extends React.Component {
+class Invoice extends React.Component {
   state = {
     pagination: false
   };
 
   render() {
+
+    const {table_data, table_columns, sendInvoice} = this.props;
+
     return (
       <InvoicePageWrapper className="isoInvoicePageWrapper">
         <div className="isoPageHeader">
@@ -134,7 +83,7 @@ export default class Invoice extends React.Component {
 
           <div className="isoInvoiceTable">
             <div className="isoSimpleTable">
-              <Table {...this.state} columns={columns} dataSource={data} />
+              <Table {...this.state} columns={table_columns} dataSource={table_data} />
             </div>
             <div className="isoTotalBill">
               <p>
@@ -150,7 +99,7 @@ export default class Invoice extends React.Component {
           </div>
 
           <div className="isoButtonWrapper">
-            <Button type="primary">Send Invoice</Button>
+            <Button type="primary" onClick={event => sendInvoice()}>Send Invoice</Button>
             <Button icon="printer">Print</Button>
           </div>
         </div>
@@ -158,3 +107,17 @@ export default class Invoice extends React.Component {
     );
   }
 }
+
+
+function mapStateToProps(state) {
+  const { table_columns, table_data } = state.Invoices.toJS();
+  return {
+    table_columns,
+    table_data
+  };
+}
+
+
+export default connect(mapStateToProps, {
+  sendInvoice
+})(Invoice);

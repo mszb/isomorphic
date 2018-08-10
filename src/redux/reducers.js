@@ -13,6 +13,7 @@ import ThemeSwitcher from './themeSwitcher/reducer';
 import LanguageSwitcher from './languageSwitcher/reducer';
 import YoutubeSearch from './youtubeSearch/reducers';
 import DevReducers from '../customApp/redux/reducers';
+import Invoices from './invoices/reducer';
 
 export default {
   Auth,
@@ -29,5 +30,6 @@ export default {
   DynamicChartComponent,
   Ecommerce,
   YoutubeSearch,
+  Invoices,
   ...DevReducers
 };
